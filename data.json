@@ -1,0 +1,389 @@
+{
+    "version": "0.3.0",
+    "settings": {
+        "siteName": "Flat React JSON CMS",
+        "baseUrl": "http://lpcms.localhost/",
+        "defaultLang": "en",
+        "languages": [
+            {
+                "code": "en",
+                "label": "EN"
+            },
+            {
+                "code": "lv",
+                "label": "LV"
+            },
+            {
+                "code": "ru",
+                "label": "RU"
+            }
+        ],
+        "seo": {
+            "title": "Flat React JSON CMS - Fast one page CMS",
+            "description": "A fast single-file PHP and JSON headless CMS rendered by React.",
+            "keywords": "flat file cms, react cms, json cms, bootstrap cms",
+            "image": "/assets/img/og.jpg",
+            "canonical": "",
+            "robots": "index,follow"
+        },
+        "htaccess": {
+            "autoSync": true,
+            "prettyUrls": true,
+            "forceHttps": false,
+            "removeWww": false,
+            "assetCacheDays": 365,
+            "protectJson": true
+        },
+        "theme": {
+            "brand": "#0d6efd",
+            "brand2": "#6610f2",
+            "accent": "#20c997",
+            "text": "#1f2937",
+            "muted": "#6b7280",
+            "bg": "#ffffff",
+            "softBg": "#f6f8fb",
+            "radius": "22px",
+            "grid": "container",
+            "font": "Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+            "customScss": "",
+            "customCss": ""
+        },
+        "libraries": {
+            "bootstrap": true,
+            "bootstrapIcons": true,
+            "swiper": false,
+            "aos": false,
+            "glightbox": false,
+            "sassBuilder": false,
+            "hcaptcha": false
+        },
+        "analytics": {
+            "ga4Id": "",
+            "loadAfterCookieConsent": true
+        },
+        "cookies": {
+            "enabled": true,
+            "message": "We use cookies for analytics and site functionality.",
+            "acceptText": "Accept",
+            "declineText": "Decline"
+        },
+        "hcaptcha": {
+            "siteKey": "",
+            "secret": ""
+        },
+        "forms": {
+            "emailTo": "",
+            "storeSubmissions": true,
+            "submissions": [
+                {
+                    "time": "2026-06-26T14:39:23+01:00",
+                    "type": "contact",
+                    "name": "Raivis Kalnins",
+                    "email": "raivis.kalnins@t-f-a.co.uk",
+                    "phone": "07952641616",
+                    "message": "test"
+                }
+            ]
+        }
+    },
+    "header": {
+        "logoText": "FlatCMS",
+        "logoImage": "",
+        "sticky": true,
+        "menu": [
+            {
+                "label": "Home",
+                "href": "#home",
+                "children": []
+            },
+            {
+                "label": "About",
+                "href": "#about",
+                "children": []
+            },
+            {
+                "label": "Services",
+                "href": "#services",
+                "children": []
+            },
+            {
+                "label": "Gallery",
+                "href": "#gallery",
+                "children": []
+            },
+            {
+                "label": "Blog",
+                "href": "#blog",
+                "children": []
+            },
+            {
+                "label": "Contact",
+                "href": "#contact",
+                "children": []
+            }
+        ]
+    },
+    "hero": {
+        "enabled": true,
+        "slides": [
+            {
+                "eyebrow": "One file CMS",
+                "title": "Flat Headless React CMS powered by JSON",
+                "text": "Inline edit content, manage SEO, build sections, galleries, blogs, products, and forms without a database.",
+                "buttonText": "Start editing",
+                "buttonHref": "#about",
+                "image": "",
+                "bg": "",
+                "seoH1": true
+            }
+        ]
+    },
+    "about": {
+        "enabled": true,
+        "title": "About us",
+        "subtitle": "A clean Bootstrap-style landing page with inline admin UX.",
+        "image": "",
+        "body": "<p>Use the admin icon in the footer to request a secure magic login link. After login, click text directly to edit it and use the admin panel for menus, SEO, colors, uploads, forms, libraries, and redirects.</p>"
+    },
+    "services": {
+        "enabled": true,
+        "title": "Services",
+        "subtitle": "Cards with AJAX-style load more.",
+        "batch": 3,
+        "showButton": true,
+        "buttonText": "Load more services",
+        "items": [
+            {
+                "title": "Headless JSON content",
+                "text": "All editable content is stored in data.json.",
+                "icon": "bi bi-braces",
+                "buttonText": "Read more",
+                "buttonHref": "#contact"
+            },
+            {
+                "title": "Inline editing",
+                "text": "Edit headings, text, cards, and HTML blocks directly on the page.",
+                "icon": "bi bi-pencil-square",
+                "buttonText": "Read more",
+                "buttonHref": "#contact"
+            },
+            {
+                "title": "SEO controls",
+                "text": "Set global and post-level meta title, descriptions, OG images, canonical URLs, and JSON-LD.",
+                "icon": "bi bi-search-heart",
+                "buttonText": "Read more",
+                "buttonHref": "#contact"
+            }
+        ]
+    },
+    "gallery": {
+        "enabled": true,
+        "title": "Gallery",
+        "subtitle": "Directory-based photos from assets/gallery or uploaded files.",
+        "batch": 6,
+        "showButton": true,
+        "buttonText": "Load more photos",
+        "items": [
+            {
+                "src": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+                "alt": "Office workspace"
+            },
+            {
+                "src": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
+                "alt": "Team meeting"
+            },
+            {
+                "src": "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=900&q=80",
+                "alt": "Creative team"
+            }
+        ]
+    },
+    "testimonials": {
+        "enabled": true,
+        "title": "Testimonials",
+        "subtitle": "Customer quote cards with load more.",
+        "batch": 3,
+        "showButton": true,
+        "buttonText": "Load more testimonials",
+        "items": [
+            {
+                "name": "Client Name",
+                "role": "Founder",
+                "text": "This CMS gives us a simple editing flow without a database.",
+                "photo": ""
+            }
+        ]
+    },
+    "products": {
+        "enabled": true,
+        "title": "Products",
+        "subtitle": "Product catalogue cards with modal details, prices, discounts, gallery, buy and quote actions.",
+        "mode": "catalog",
+        "homeLimit": 8,
+        "batch": 4,
+        "desktopColumns": 4,
+        "showButton": true,
+        "buttonText": "Load more products",
+        "showBuyButton": true,
+        "showQuoteButton": true,
+        "buyButtonText": "Buy",
+        "quoteButtonText": "Add to quote",
+        "basketEnabled": true,
+        "basketTitle": "Quote basket",
+        "basketButtonText": "Send quote request",
+        "currency": "EUR",
+        "items": [
+            {
+                "title": "Starter Website",
+                "slug": "starter-website",
+                "sku": "LPCMS-STARTER",
+                "price": 550,
+                "oldPrice": 690,
+                "discountLabel": "-20%",
+                "currency": "EUR",
+                "image": "",
+                "gallery": [],
+                "text": "A fast one-page website package.",
+                "body": "<p>Perfect for a small business landing page. Includes a hero, about section, service cards, gallery, contact form, SEO settings, and JSON-powered content editing.</p>",
+                "features": [
+                    "One-page landing page",
+                    "Inline editing",
+                    "SEO-ready structure"
+                ],
+                "buyUrl": "#contact",
+                "buyButton": true,
+                "quoteButton": true,
+                "related": [],
+                "seo": {
+                    "title": "Starter Website",
+                    "description": "Starter website product page.",
+                    "image": ""
+                }
+            },
+            {
+                "title": "Custom Quote Product",
+                "slug": "custom-quote-product",
+                "sku": "LPCMS-QUOTE",
+                "price": 0,
+                "oldPrice": 0,
+                "discountLabel": "",
+                "currency": "EUR",
+                "image": "",
+                "gallery": [],
+                "text": "A product or service package with price on request.",
+                "body": "<p>Use price 0 for products that should show only the Add to quote button. Visitors can collect products in the quote basket and send all selected items through the form textarea.</p>",
+                "features": [
+                    "Price on request",
+                    "Quote basket support",
+                    "Modal product details"
+                ],
+                "buyUrl": "",
+                "buyButton": false,
+                "quoteButton": true,
+                "related": [],
+                "seo": {
+                    "title": "Custom Quote Product",
+                    "description": "Quote-only product page.",
+                    "image": ""
+                }
+            }
+        ]
+    },
+    "blog": {
+        "enabled": true,
+        "title": "Blog",
+        "subtitle": "JSON posts with modal views, SEO fields, and share buttons.",
+        "batch": 3,
+        "showButton": true,
+        "buttonText": "Load more posts",
+        "items": [
+            {
+                "title": "How this flat CMS works",
+                "slug": "how-flat-cms-works",
+                "date": "2026-06-26",
+                "image": "",
+                "excerpt": "PHP handles JSON storage and admin APIs. React renders the one-page DOM.",
+                "body": "<p>This CMS keeps content in JSON and renders it with React. The same index.php serves the frontend, APIs, admin login, uploads, forms, redirects, and SEO metadata.</p>",
+                "seo": {
+                    "title": "How this flat CMS works",
+                    "description": "Learn how a one-file React and PHP flat CMS works.",
+                    "image": ""
+                }
+            }
+        ]
+    },
+    "pages": {
+        "enabled": true,
+        "items": [
+            {
+                "title": "Privacy Policy",
+                "slug": "privacy-policy",
+                "excerpt": "Privacy policy page managed from JSON.",
+                "body": "<p>Update this privacy policy from the JSON editor or through future page block controls.</p>",
+                "seo": {
+                    "title": "Privacy Policy",
+                    "description": "Privacy policy for this website.",
+                    "image": ""
+                }
+            }
+        ]
+    },
+    "contact": {
+        "enabled": true,
+        "title": "Contact us",
+        "subtitle": "Map, details, modal form, and social share/follow.",
+        "mapEmbed": "https://www.google.com/maps?q=Riga%2C%20Latvia&output=embed",
+        "details": {
+            "address": "Riga, Latvia",
+            "phone": "+371 00 000 000",
+            "email": "hello@example.com",
+            "hours": "Mon-Fri 09:00-18:00"
+        },
+        "formButtonText": "Send request"
+    },
+    "cta": {
+        "enabled": true,
+        "title": "Ready to launch a fast",
+        "text": "Open the admin panel, change the content, upload images, and publish.",
+        "buttonText": "Open contact form"
+    },
+    "footer": {
+        "copy": "Copyright {year} FlatCMS. All rights reserved.",
+        "menu": [
+            {
+                "label": "Privacy",
+                "href": "/page/privacy-policy"
+            },
+            {
+                "label": "Contact",
+                "href": "#contact"
+            }
+        ],
+        "social": [
+            {
+                "label": "Facebook",
+                "url": "#",
+                "icon": "bi bi-facebook"
+            },
+            {
+                "label": "Instagram",
+                "url": "#",
+                "icon": "bi bi-instagram"
+            },
+            {
+                "label": "LinkedIn",
+                "url": "#",
+                "icon": "bi bi-linkedin"
+            }
+        ]
+    },
+    "redirects": [
+        {
+            "from": "/old-page",
+            "to": "/",
+            "status": 301,
+            "enabled": false
+        }
+    ],
+    "embeds": []
+}
