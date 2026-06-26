@@ -1,6 +1,6 @@
 # LPCMS
 
-Landing Page CMS — a flat-file, single-entry PHP CMS with a React-powered one-page frontend, JSON content storage, optional blog/product catalogues, and quote-basket forms.
+Landing Page CMS — a flat-file, single-entry PHP CMS with a React-powered one-page frontend, JSON content storage, visual inline editing, optional blog/product catalogues, and quote-basket forms.
 
 LPCMS is designed for fast landing pages, small business websites, product pages, portfolios, service websites, galleries, and blogs where you want a lightweight CMS without a database. The application logic lives in `index.php`; content, theme settings, SEO options, menus, redirects, and sections are stored in JSON.
 
@@ -14,6 +14,20 @@ LPCMS works like a compact headless CMS:
 - Apache/LiteSpeed `.htaccess` rules provide clean SEO URLs, compression, cache headers, security headers, and protection for JSON/private files.
 
 The goal is to keep deployment simple: upload the project to PHP hosting, open the site, configure admin email access, and edit content inline.
+
+## What is new in v0.4.0
+
+This package focuses on visual polish and a cleaner admin workflow.
+
+- Softer Bootstrap/iLanding-style frontend design with lighter typography, smoother spacing, card animations, gradient panels, and more modern buttons.
+- Cleaner Tabler-inspired admin panel with card groups, icon tabs, softer controls, and better form spacing.
+- New editable homepage sections: stats, features, process/timeline, pricing cards, and FAQ accordion.
+- Existing editable sections remain: hero, about, services, gallery, testimonials, products, blog, contact, CTA, and footer.
+- Visual rich text editor added inside admin for HTML fields. It supports bold, italic, underline, headings, ordered/unordered lists, links, remove formatting, and direct HTML editing.
+- Blog admin tab added for creating/editing posts, slugs, dates, excerpts, SEO fields, and rich post body content.
+- Product admin editor now includes rich product body editing, keeping product modals, galleries, price/discount fields, buy/quote logic, and quote basket behavior.
+- AOS animation library is enabled by default in fresh installs and can still be disabled from the Libraries tab.
+
 
 ## Current package structure
 
@@ -98,8 +112,13 @@ Included public sections:
 - Ajax-style search across one-page content.
 - Responsive hamburger navigation below XL breakpoint.
 - Hero slider or static hero when only one slide exists.
-- About section with image and editable text.
+- About section with image and editable rich text.
+- Stats counters for proof points and metrics.
+- Feature blocks with icons, text, and visual panel.
 - Services cards with load-more option.
+- Process/timeline section.
+- Pricing card section.
+- FAQ accordion section.
 - Gallery grid with load-more option and lightbox support.
 - Testimonials cards with load-more option.
 - Blog section with load-more option and modal/detail support.
@@ -438,9 +457,8 @@ lpcms-YYYY-MM-DD.zip
 
 Possible next improvements:
 
-- First-class accordion block manager.
 - First-class tabs block manager.
-- More advanced blog/product editor with variants and related products.
+- Product variants and related products manager.
 - Sitemap XML generator.
 - Robots.txt generator.
 - Better image crop/resize workflow.

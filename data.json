@@ -1,5 +1,5 @@
 {
-    "version": "0.3.0",
+    "version": "0.4.0",
     "settings": {
         "siteName": "Flat React JSON CMS",
         "baseUrl": "http://lpcms.localhost/",
@@ -72,11 +72,19 @@
             "secret": ""
         },
         "forms": {
-            "emailTo": "",
+            "emailTo": "raivis.kalnins@t-f-a.co.uk",
             "storeSubmissions": true,
             "submissions": [
                 {
                     "time": "2026-06-26T14:39:23+01:00",
+                    "type": "contact",
+                    "name": "Raivis Kalnins",
+                    "email": "raivis.kalnins@t-f-a.co.uk",
+                    "phone": "07952641616",
+                    "message": "test"
+                },
+                {
+                    "time": "2026-06-26T15:33:19+01:00",
                     "type": "contact",
                     "name": "Raivis Kalnins",
                     "email": "raivis.kalnins@t-f-a.co.uk",
@@ -120,6 +128,16 @@
                 "label": "Contact",
                 "href": "#contact",
                 "children": []
+            },
+            {
+                "label": "Blog",
+                "href": "#blog",
+                "children": []
+            },
+            {
+                "label": "Contact",
+                "href": "#contact",
+                "children": []
             }
         ]
     },
@@ -144,6 +162,139 @@
         "subtitle": "A clean Bootstrap-style landing page with inline admin UX.",
         "image": "",
         "body": "<p>Use the admin icon in the footer to request a secure magic login link. After login, click text directly to edit it and use the admin panel for menus, SEO, colors, uploads, forms, libraries, and redirects.</p>"
+    },
+    "stats": {
+        "enabled": true,
+        "title": "Numbers that matter",
+        "subtitle": "Small animated counters for trust, speed, and proof points.",
+        "items": [
+            {
+                "number": "100%",
+                "label": "Flat-file JSON content"
+            },
+            {
+                "number": "1",
+                "label": "PHP application file"
+            },
+            {
+                "number": "0",
+                "label": "Database tables"
+            },
+            {
+                "number": "SEO",
+                "label": "Clean URLs and meta controls"
+            }
+        ]
+    },
+    "features": {
+        "enabled": true,
+        "title": "Built for fast landing pages",
+        "subtitle": "Reusable editable feature rows with icons, text, and actions.",
+        "image": "",
+        "items": [
+            {
+                "title": "Visual inline editing",
+                "text": "Click headings, paragraphs, cards, and modal content directly on the page.",
+                "icon": "bi bi-magic"
+            },
+            {
+                "title": "Product catalogue mode",
+                "text": "Run products like blog posts with modals, prices, discounts, galleries, buy links, and quote baskets.",
+                "icon": "bi bi-bag-check"
+            },
+            {
+                "title": "Performance first",
+                "text": "Optional libraries, asset cache headers, compression rules, and JSON-only content keep the page lightweight.",
+                "icon": "bi bi-speedometer2"
+            }
+        ]
+    },
+    "process": {
+        "enabled": true,
+        "title": "How it works",
+        "subtitle": "A simple editable process timeline.",
+        "items": [
+            {
+                "title": "Upload",
+                "text": "Upload index.php and open the site once to create JSON and assets.",
+                "icon": "bi bi-cloud-arrow-up"
+            },
+            {
+                "title": "Edit",
+                "text": "Login by email magic link and edit content inline or from the admin tabs.",
+                "icon": "bi bi-pencil-square"
+            },
+            {
+                "title": "Publish",
+                "text": "Save JSON, sync .htaccess, and publish fast SEO-ready pages.",
+                "icon": "bi bi-rocket-takeoff"
+            }
+        ]
+    },
+    "pricing": {
+        "enabled": true,
+        "title": "Pricing blocks",
+        "subtitle": "Optional editable pricing cards for services, subscriptions, or packages.",
+        "items": [
+            {
+                "title": "Starter",
+                "price": "€550",
+                "period": "one time",
+                "text": "Landing page setup with inline editing.",
+                "features": [
+                    "One-page website",
+                    "SEO basics",
+                    "Contact form"
+                ],
+                "buttonText": "Request offer",
+                "buttonHref": "#contact"
+            },
+            {
+                "title": "Business",
+                "price": "€990",
+                "period": "one time",
+                "text": "More sections, products, gallery, and quote flow.",
+                "features": [
+                    "Product catalogue",
+                    "Quote basket",
+                    "Analytics/cookies"
+                ],
+                "buttonText": "Request offer",
+                "buttonHref": "#contact"
+            },
+            {
+                "title": "Custom",
+                "price": "Quote",
+                "period": "project",
+                "text": "Custom blocks, integrations, and design polish.",
+                "features": [
+                    "Custom sections",
+                    "Advanced forms",
+                    "Theme tuning"
+                ],
+                "buttonText": "Add to quote",
+                "buttonHref": "#products"
+            }
+        ]
+    },
+    "faq": {
+        "enabled": true,
+        "title": "Frequently asked questions",
+        "subtitle": "Bootstrap-style accordion content managed from JSON.",
+        "items": [
+            {
+                "question": "Can LPCMS run without a database?",
+                "answer": "Yes. Content, settings, SEO, products, redirects, and forms are stored in JSON."
+            },
+            {
+                "question": "Can products be quote-only?",
+                "answer": "Yes. Set product price to 0 and the buy button is hidden while Add to quote stays available."
+            },
+            {
+                "question": "Can I disable libraries?",
+                "answer": "Yes. Admin library settings let you connect or disconnect optional frontend libraries."
+            }
+        ]
     },
     "services": {
         "enabled": true,
