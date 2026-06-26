@@ -1,0 +1,92 @@
+# BEGIN FlatCMS
+# Managed by index.php. Custom rules can be placed before BEGIN or after END.
+Options -Indexes
+DirectoryIndex index.php
+FileETag None
+
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+# To force HTTPS from the CMS admin, enable settings.htaccess.forceHttps.
+# To redirect www to non-www, enable settings.htaccess.removeWww.
+
+  # Let real files and directories load directly.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Pretty SEO URLs for JSON content.
+  RewriteRule ^blog/([A-Za-z0-9-]+)/?$ index.php?cms_route=blog&slug=$1 [L,QSA,B]
+  RewriteRule ^posts/([A-Za-z0-9-]+)/?$ index.php?cms_route=blog&slug=$1 [L,QSA,B]
+  RewriteRule ^product/([A-Za-z0-9-]+)/?$ index.php?cms_route=products&slug=$1 [L,QSA,B]
+  RewriteRule ^products/([A-Za-z0-9-]+)/?$ index.php?cms_route=products&slug=$1 [L,QSA,B]
+  RewriteRule ^page/([A-Za-z0-9-]+)/?$ index.php?cms_route=pages&slug=$1 [L,QSA,B]
+  RewriteRule ^pages/([A-Za-z0-9-]+)/?$ index.php?cms_route=pages&slug=$1 [L,QSA,B]
+
+  # Optional short page URL: /about-us -> JSON page slug about-us.
+  RewriteRule ^([A-Za-z0-9-]+)/?$ index.php?cms_route=pages&slug=$1 [L,QSA,B]
+
+  # Fallback to the React shell.
+  RewriteRule . index.php [L,QSA]
+</IfModule>
+<FilesMatch "(^\.|data\.json$|.*\.tmp$|.*\.bak$|.*\.old$|composer\.(json|lock)$|package(-lock)?\.json$|yarn\.lock$|vite\.config\.|webpack\.config\.|phpunit\.)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Deny from all
+  </IfModule>
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header unset ETag
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), payment=()"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/avif avif
+  AddType image/webp webp
+  AddType image/svg+xml svg svgz
+  AddType font/woff2 woff2
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml image/svg+xml font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/plain text/html text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml image/svg+xml font/ttf font/otf font/woff font/woff2
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:css|js|mjs|jpg|jpeg|png|gif|webp|avif|svg|ico|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(?:html|php|json)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+# END FlatCMS
