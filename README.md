@@ -1,6 +1,6 @@
 # LPCMS
 
-Landing Page CMS — a flat-file, single-entry PHP CMS with a React-powered one-page frontend and JSON content storage.
+Landing Page CMS — a flat-file, single-entry PHP CMS with a React-powered one-page frontend, JSON content storage, optional blog/product catalogues, and quote-basket forms.
 
 LPCMS is designed for fast landing pages, small business websites, product pages, portfolios, service websites, galleries, and blogs where you want a lightweight CMS without a database. The application logic lives in `index.php`; content, theme settings, SEO options, menus, redirects, and sections are stored in JSON.
 
@@ -103,10 +103,69 @@ Included public sections:
 - Gallery grid with load-more option and lightbox support.
 - Testimonials cards with load-more option.
 - Blog section with load-more option and modal/detail support.
-- Product section with load-more option and modal/detail support.
+- Product section with admin enable/disable option, 8 homepage items by default, 4-per-row desktop grid, load-more button, modal/detail support, prices, discounts, gallery images, buy buttons, quote buttons, and quote basket.
 - Contact section with Google Maps embed and contact details box.
 - CTA section with modal form.
 - Footer with copyright, menu, social follow icons, and scroll-up button.
+
+
+## Product catalogue and quote basket
+
+LPCMS products can be used like blog posts, but with commerce-style fields and actions. The products section is optional and can be enabled or disabled from the admin panel.
+
+Default product behaviour:
+
+- Initial homepage display shows `products.homeLimit`, set to 8 by default.
+- Load more adds `products.batch`, set to 4 by default.
+- Desktop product grid uses Bootstrap 4-per-row layout with `col-lg-3`.
+- Each product has a clean SEO URL such as `/product/product-slug`.
+- Each product opens in a modal window from the homepage grid.
+- Detail pages and modals can show title, description, main image, gallery images, SKU, price, old price, discount label, feature list, buy button, add-to-quote button, and social share links.
+
+Important product JSON fields:
+
+```json
+{
+  "title": "Starter Website",
+  "slug": "starter-website",
+  "sku": "LPCMS-STARTER",
+  "price": 550,
+  "oldPrice": 690,
+  "discountLabel": "-20%",
+  "currency": "EUR",
+  "image": "/assets/img/product.jpg",
+  "gallery": ["/assets/img/product-1.jpg", "/assets/img/product-2.jpg"],
+  "text": "Short card text.",
+  "body": "<p>Full product description.</p>",
+  "features": ["Feature one", "Feature two"],
+  "buyUrl": "#contact",
+  "buyButton": true,
+  "quoteButton": true,
+  "seo": {
+    "title": "Starter Website",
+    "description": "Starter website product page.",
+    "image": "/assets/img/product.jpg"
+  }
+}
+```
+
+Button rules:
+
+- If `products.showBuyButton` is enabled and product `price` is greater than `0`, the Buy button can be shown.
+- If product `price` is `0`, the Buy button is hidden and the quote flow is used.
+- If `products.showQuoteButton` is enabled and product `quoteButton` is not false, the Add to quote button is shown.
+- Product-level `buyButton` and `quoteButton` can override whether actions appear on individual products.
+
+Quote basket flow:
+
+1. Visitor clicks **Add to quote** on one or more products.
+2. A floating quote basket button appears.
+3. Basket modal lists all selected products with title, SKU, and price/price-on-request.
+4. Visitor clicks **Send quote request**.
+5. Contact form opens with all basket products inserted into the message textarea.
+6. On successful form submission, the quote basket is cleared.
+
+This is designed for service/product catalogues where some items can be sold directly and others require quotation.
 
 ## Inline editing
 
@@ -123,7 +182,7 @@ Editable areas include:
 - Gallery items.
 - Testimonials.
 - Blog posts.
-- Product posts.
+- Product posts/catalogue items, including prices, discounts, gallery, buy/quote buttons, and SEO fields.
 - Contact details.
 - CTA text/forms.
 - Footer links/social links.
@@ -144,7 +203,7 @@ Typical data stored in JSON:
 - Navigation/menu tree.
 - Landing page sections.
 - Blog posts.
-- Products.
+- Products, product gallery, prices, discounts, buy URLs, quote settings, and quote basket submissions.
 - Gallery items.
 - Testimonials.
 - Forms.
@@ -381,7 +440,7 @@ Possible next improvements:
 
 - First-class accordion block manager.
 - First-class tabs block manager.
-- More advanced blog/product editor.
+- More advanced blog/product editor with variants and related products.
 - Sitemap XML generator.
 - Robots.txt generator.
 - Better image crop/resize workflow.
